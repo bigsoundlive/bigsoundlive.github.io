@@ -26,7 +26,7 @@
     	padding: 0;
     	border: 0;
     	font-size: 100%;
-    	font: inherit;
+      font-family: 'Nunito', sans-serif;
     	vertical-align: baseline;
     }
     /* HTML5 display-role reset for older browsers */
@@ -36,6 +36,8 @@
     }
     body {
     	line-height: 1;
+      background: #FFFF66;
+      font-size: 16px;
     }
     ol, ul {
     	list-style: none;
@@ -55,40 +57,69 @@
 
     .ctr {
       padding: 150px 0;
-      text-align: center;
+      text-align: left;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    table {
-      display: inline-block;
+    .divider {
+      border-bottom: 1px solid #000;
     }
 
-    table, th, td {
-      border: 1px solid;
-      width: 500px;
+    h1 { margin-bottom: 50px; text-transform: uppercase; text-align: left;}
+    
+    div {
+      margin-bottom: 10px;
     }
     
-    td {
-      padding: 8px;
+    #archive_link {
+      display: block;
+      margin: 200px 0 0 0;
+      text-align: left;
     }
-
-    h1 { margin-bottom: 50px; text-transform: uppercase}
-      .head { background-color: #eee }
+    
+    #archives {
+      display: none;
+    }
+    
+    #archives.show {
+      padding-top: 50px;
+      display: block;
+    }
       
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="ctr">
-      <img src="./big_pete.png" alt="">
-      <h1>Big Pete's House</h1>
-      <table>
-        <tr class="head">
-          <td colspan="2">APRIL</td>
-        </tr>
-        <tr>
-          <td>4/7</td>
-          <td>Jon Mueller at 8:30, 711 Saluda</td>
-        </tr>
-      </table>
+      <h1>Columbia shows</h1>
+        <div class="">
+          04.07.23 / <a href="https://rhythmplex.bandcamp.com/" target="_blank">jon mueller</a> / 711 whaley / 8:30pm
+        </div>
+        <div class="">
+          05.21.23 / <a href="https://fredlonberg-holm.bandcamp.com/" target="_blank">fred lonberg-holm</a> / mike williams art 1221 lincoln / 8:30pm
+        </div>
+      
+      <a href="#" id="archive_link">Archives</a>
+      
+      <div id="archives">
+        <div class="">
+          04.07.23 / <a href="https://rhythmplex.bandcamp.com/" target="_blank">jon mueller</a> / 711 whaley / 8:30pm
+        </div>
+        <div class="">
+          05.21.23 / <a href="https://fredlonberg-holm.bandcamp.com/" target="_blank">fred lonberg-holm</a> / mike williams art 1221 lincoln / 8:30pm
+        </div>
+      </div>
     </div>
   </body>
+  
+  <script type="text/javascript">
+    var archiveLink = document.getElementById('archive_link');
+    var archives = document.getElementById('archives');
+    archiveLink.addEventListener('click', function(){
+      archives.classList.contains('show') ? archives.classList.remove('show') : archives.classList.add('show');
+    });
+  </script>
 </html>
