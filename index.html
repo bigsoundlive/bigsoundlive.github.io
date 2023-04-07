@@ -173,7 +173,8 @@
     var archives = document.getElementById('archives');
     var upcoming = document.getElementById('upcoming');
     
-    archiveLink.addEventListener('click', function(){
+    archiveLink.addEventListener('click', function(e){
+      e.preventDefault();
       archives.classList.contains('show') ? archives.classList.remove('show') : archives.classList.add('show');
     });
     
