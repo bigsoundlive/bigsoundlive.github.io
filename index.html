@@ -206,7 +206,7 @@
         if (date > yesterday) {
           $(upcoming).append($(listing));
         } else {
-          $(archives).append($(listing));
+          $(archives).prepend($(listing));
         }
         
       })
