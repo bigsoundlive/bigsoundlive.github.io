@@ -189,8 +189,8 @@
     });
     
     var compare = function(a,b){
-      var aDate = new Date(a.date);
-      var bDate = new Date(b.date);
+      var aDate = new Date(a.date.replaceAll('.', '/'));
+      var bDate = new Date(b.date.replaceAll('.', '/'));
       if (aDate < bDate) {
         return -1
       } else if ( aDate > bDate ) {
